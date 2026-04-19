@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recent Orders | Vanilla Bean R.</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="app-wrapper">
+  <aside class="sidebar">
+    <div class="nav-btn mb-5">
+      <img src="VANILLA BEAN.png" alt="Logo" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
+    </div>
+    <a href="index.html" class="nav-btn" title="Menu"><i class="bi bi-grid-fill fs-5"></i></a>
+    <a href="orders.html" class="nav-btn active" title="Orders"><i class="bi bi-receipt fs-5"></i></a>
+    <div class="nav-btn mt-auto" title="Settings">
+      <i class="bi bi-gear-wide-connected fs-5"></i>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="mb-4 d-flex justify-content-between align-items-center">
+      <div>
+        <span class="text-muted small fw-bold text-uppercase">Check your activity</span>
+        <h2 class="section-title">Recent Orders</h2>
+      </div>
+      <button class="btn btn-outline-danger btn-sm rounded-pill" onclick="clearHistory()">Clear History</button>
+    </header>
+
+    <div class="table-responsive">
+      <table class="orders-table">
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Date & Time</th>
+            <th>Items</th>
+            <th>Total</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="ordersBody">
+          <tr><td colspan="6" class="text-center py-5 text-muted">No orders found.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+<div class="modal fade" id="orderModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <h5 class="fw-bold m-0">Order Summary</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div id="orderDetailsContent"></div>
+      </div>
+      <div class="modal-footer border-0">
+        <button class="btn btn-dark w-100 py-3 fw-bold" style="border-radius:16px" onclick="window.print()">Print Receipt</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="viewOrder.js"></script>
+
+
+</body>
+</html>
